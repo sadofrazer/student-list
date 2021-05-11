@@ -1,0 +1,28 @@
+version: "3.3"
+services:
+
+  private_registry:
+    image: registry:2
+    container_name: private_registry
+    ports:
+      - "5001:5000"
+    environment: 
+      -REGISTRY_STORAGE_DELETE_ENABLED=true
+    networks:
+      - lan0
+
+  registry-ui:
+    image: joxit/docker-registry-ui:static
+    container_name: registry-ui
+    depends_on:
+      - private_registry
+    networks: 
+      - lan0
+    ports:
+      - "8090:80"
+    environment:
+      - REGISTRY_URL=http://private_registry:5000 
+      - DELETES_IMAGES=true
+      - REGISTRY_TITLE=Frazer
+networks: 
+  lan0:      
