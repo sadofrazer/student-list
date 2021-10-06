@@ -19,7 +19,7 @@ services:
     environment:
       - USERNAME=toto 
       - PASSWORD=python
-      - API_NAME=student-list_api-student-list_1
+      - API_NAME=api-student-list
       - API_PORT=5000
       
 volumes:
