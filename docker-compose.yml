@@ -1,4 +1,4 @@
-version: "3.3"
+version: '2'
 services:
   api-student-list:
     image: sadofrazer/api-student-list:v1
