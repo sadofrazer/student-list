@@ -1,12 +1,11 @@
 version: "3.3"
 services:
-
   api-student-list:
     image: sadofrazer/api-student-list:v1
     ports:
       - "8080:5000"
     volumes:
-      - db-data:/data/
+      - ./simple_api/student_age.json:/data/student_age.json
 
   web_site:
     image: php:apache
